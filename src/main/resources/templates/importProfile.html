@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Your Details</title>
+    <script>
+        var index = 0;
+        function addMore() {
+            var divElement = document.createElement('div');
+            divElement.innerHTML = "<input  list=\"products\" name=\"product[" + index + "]\" multiple>\n" +
+                "    <datalist id=\"products\">\n" +
+                "        <option value=\"cycle\" />\n" +
+                "        <option value=\"scooter\" />\n" +
+                "        <option value=\"car\" />\n" +
+                "        <option value=\"pencil\" />\n" +
+                "        <option value=\"pen\" />\n" +
+                "        <option value=\"books\" />\n" +
+                "        <option value=\"iron\" />\n" +
+                "    </datalist>\n" +
+                "    <a href=\"javascript:addMore()\">Add More</a>";
+
+            document.getElementById("product").appendChild(divElement);
+            index++;
+        }
+    </script>
+    <style>
+        #importer{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Comic Sans MS";
+        }
+    </style>
+</head>
+<body>
+<h1>dbhsd</h1>
+<div id="importer" >
+    <h1>Enter your <br> Details  </h1>
+    <div>
+    <form method="post" action="/newImporter">
+        <label for="name" >Name</label>
+        <input id="name" type="text" name = "name" placeholder="Name" required><br>
+        <label for="email" >Email Id</label>
+        <input id="email" type="email" name="email" placeholder="Email ID" required><br>
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" name="phone" placeholder="9999999999" maxlength="10" minlength="10"><br>
+        <label for="gstn">GST Number</label>
+        <input id="gstn" type="text" name="gstn" placeholder="GST Number" maxlength="15" minlength="15"><br>
+        <label for="licenseNo">Import License Number</label>
+        <input id="licenseNo" type="text" name="licenseNo" placeholder="Import License Number" ><br>
+        <div id="product">
+        <label for="product" >Product</label>
+            <!--
+            <input  list="products" name="product[0]" multiple>
+            <datalist id="products">
+                <option value="cycle" />
+                <option value="scooter" />
+                <option value="car" />
+                <option value="pencil" />
+                <option value="pen" />
+                <option value="books" />
+                <option value="iron" />
+            </datalist>
+            <a href="javascript:addMore()">Add More</a>
+            -->
+            <script>
+                addMore();
+            </script>
+
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</div>
+</body>
+</html>

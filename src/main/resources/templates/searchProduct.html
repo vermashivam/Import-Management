@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th =" http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Product</title>
+</head>
+<body>
+<h1>Search Importer for product you require</h1>
+<form th:fragment = "selectProduct" action="searchProduct" method="post">
+    <label for="product">Enter product type</label>
+    <input list="products" id = "product" name="product" required>
+    <datalist id="products">
+        <option value="cycle"></option>
+        <option value="scooter"></option>
+        <option value="cars"></option>
+        <option value="pencil"></option>
+        <option value="pen"></option>
+        <option value="books"></option>
+        <option value="iron"></option>
+        <option value="silver"></option>
+    </datalist>
+    <input type="submit" value="Search">
+</form>
+</body>
+</html>
